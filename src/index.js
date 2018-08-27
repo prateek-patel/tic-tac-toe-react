@@ -3,9 +3,23 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 class Square extends React.Component {
+    /**
+     * Note 
+     * ---
+     * In JavaScript classes, you need to always call super when defining 
+     * the constructor of a subclass. All React component classes that have
+     *  a constructor should start it with a super(props) call.
+     * @param {*} props 
+     */
+    constructor(props) {
+        super(props)
+        this.state = {
+            value: null
+        }
+    }
     render() {
         return (
-            <button className="square">
+            <button className="square" onClick={() => alert("clicked on "+this.props.value)}>
                 {this.props.value}
             </button>
         );
