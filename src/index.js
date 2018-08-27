@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 /**
- * Square component is a controlled component because it is controlled by it's parent component i.e Board
+ * Converting Square to be a functional component
  */
-class Square extends React.Component {
-    render() {
-        return (
-            <button
-                className="square"
-                onClick={() => this.props.onClick()}
-            >
-                {this.props.value}
-            </button>
-        );
-    }
+function Square(props) {
+    return (
+        <button
+            className="square"
+            onClick={props.onClick}
+        >
+            {props.value}
+        </button>
+    );
 }
 
 class Board extends React.Component {
